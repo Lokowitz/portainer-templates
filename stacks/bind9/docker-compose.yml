@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  bind9:
+      image: internetsystemsconsortium/bind9:9.18
+      container_name: bind9
+      environment:
+        - BIND9_USER=root
+        - TZ=Europe/Berlin
+      ports:
+        - 53:53/tcp
+        - 53:53/udp
+      volumes:
+        - etc:/etc/bind
+        - cache:/var/cache/bind
+        - lib:/var/lib/bind
+        - log:/var/log
+      restart: unless-stopped
+      networks:
+        bind9:
+          ipv4_address: ${IP_ADRESS}
+
+volumes:
+  etc:
+  cache:
+  lib:
+  log:
