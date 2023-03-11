@@ -10,6 +10,16 @@
         "url": "https://github.com/Lokowitz/portainer-templates",
         "stackfile": "stacks/filebrowser/docker-compose.yml"
       }
+    },
+    {
+      "type": 3,
+      "title": "AdGuard",
+      "description": "Container for AD-blocking",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/adguard/docker-compose.yml"
+      }
     }
   ]
 }
