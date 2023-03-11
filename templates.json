@@ -2,7 +2,7 @@
   "version": "2",
   "templates": [
     {
-      "type": 2,
+      "type": 3,
       "title": "Filebrowser",
       "description": "Container for web based filebrowsing",
       "platform": "linux",
