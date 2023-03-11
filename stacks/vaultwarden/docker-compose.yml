@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  app:
+    image: vaultwarden/server
+    container_name: vaultwarden
+    ports:
+      - ${IP_ADRESS}:80
+    volumes:
+      - data:/data/
+    restart: unless-stopped
+  
+volumes:
+  data:
