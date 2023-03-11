@@ -9,8 +9,7 @@
       "repository": {
         "url": "https://github.com/Lokowitz/portainer-templates",
         "stackfile": "stacks/filebrowser/docker-compose.yml"
-        }
-      ]
+      }
     }
   ]
 }
