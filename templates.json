@@ -20,6 +20,23 @@
         "url": "https://github.com/Lokowitz/portainer-templates",
         "stackfile": "stacks/adguard/docker-compose.yml"
       }
+    },
+        {
+      "type": 3,
+      "title": "Proxy",
+      "description": "Container for a reverse proxy",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/proxy/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Proxy web access port",
+          "description": "Port to access the web portal."
+        }
+      ]
     }
   ]
 }
