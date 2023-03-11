@@ -21,7 +21,7 @@
         "stackfile": "stacks/adguard/docker-compose.yml"
       }
     },
-        {
+    {
       "type": 3,
       "title": "Proxy",
       "description": "Container for a reverse proxy",
@@ -35,6 +35,23 @@
           "name": "PORT",
           "label": "Web port",
           "description": "Port to access the proxy web portal."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Vaultwarden",
+      "description": "Container for a selfhosted bitwarden server",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/vaultwarden/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Web port",
+          "description": "Port to access the web portal."
         }
       ]
     }
