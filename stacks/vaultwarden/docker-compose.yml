@@ -5,7 +5,7 @@ services:
     image: vaultwarden/server
     container_name: vaultwarden
     ports:
-      - ${IP_ADRESS}:80
+      - ${PORT}:80
     volumes:
       - data:/data/
     restart: unless-stopped
