@@ -26,7 +26,14 @@
       "repository": {
         "url": "https://github.com/Lokowitz/portainer-templates",
         "stackfile": "stacks/adguard/docker-compose.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Web port",
+          "description": "Port to access the web portal."
+        }
+      ]
     },
     {
       "type": 3,
