@@ -99,6 +99,38 @@
           "label": "Timezone"
         }
       ]
+    },
+    {
+      "type": 3,
+      "title": "Wireguard Easy",
+      "description": "Container for an easy Wireguad setup",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/wg-easy/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PORT_WEB",
+          "label": "Web port",
+          "description": "Port to access the web portal."
+        },
+        {
+          "name": "PORT_WG",
+          "label": "Wireguard port",
+          "description": "Port Wireguard is listining on."
+        },
+        {
+          "name": "PWD",
+          "label": "Password",
+          "description": "Password for web login."
+        },
+        {
+          "name": "DNS",
+          "label": "Domain.",
+          "description": "Your DYNDNS Domain."
+        }
+      ]
     }
   ]
 }
