@@ -68,6 +68,16 @@
           "description": "Port to access the web portal."
         }
       ]
+    },
+    {
+      "type": 3,
+      "title": "Watchtower",
+      "description": "Container to keep your container up to date.",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/watchtower/docker-compose.yml"
+      }
     }
   ]
 }
