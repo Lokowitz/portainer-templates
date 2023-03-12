@@ -16,7 +16,16 @@ services:
             - workdir:/opt/adguardhome/work
             - confdir:/opt/adguardhome/conf
         restart: unless-stopped
+        networks:
+            - network
     
 volumes:
     workdir:
+        name: adguardhome_workdir
     confdir:
+        name: adguardhome_confdir
+
+networks:
+  network:
+    name: bridge
+    external: true
