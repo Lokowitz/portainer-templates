@@ -9,7 +9,14 @@
       "repository": {
         "url": "https://github.com/Lokowitz/portainer-templates",
         "stackfile": "stacks/filebrowser/docker-compose.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Web port",
+          "description": "Port to access the web portal."
+        }
+      ]
     },
     {
       "type": 3,
@@ -34,7 +41,7 @@
         {
           "name": "PORT",
           "label": "Web port",
-          "description": "Port to access the proxy web portal."
+          "description": "Port to access the web portal."
         }
       ]
     },
