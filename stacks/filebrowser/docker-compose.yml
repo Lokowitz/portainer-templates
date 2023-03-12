@@ -4,12 +4,13 @@ services:
   file-browser:
     image: filebrowser/filebrowser
     container_name: file-browser
+    command: --database /var/lib/docker/volumes/filebrowser/_data/database.db
     user: 0:0
     ports:
-      - 50000:80
+      - ${PORT}:80
     volumes:
       - /:/srv
-      - /docker/filebrowser/database.db:/database.db
+      - /var/lib/docker/volumes/filebrowser/_data/database.db:/database.db
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
