@@ -2,8 +2,9 @@ version: "2"
 
 services:
     adguardhome:
-        image: adguard/adguardhome
         container_name: adguardhome
+        image: adguard/adguardhome
+        restart: unless-stopped
         ports:
             - 53:53/tcp
             - 53:53/udp
@@ -14,10 +15,9 @@ services:
         volumes:
             - workdir:/opt/adguardhome/work
             - confdir:/opt/adguardhome/conf
-        restart: unless-stopped
-    
+
 volumes:
     workdir:
-        name: adguardhome_workdir
+        name: adguardhome-workdir
     confdir:
-        name: adguardhome_confdir
+        name: adguardhome-confdir

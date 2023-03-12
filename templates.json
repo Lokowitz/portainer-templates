@@ -37,12 +37,12 @@
     },
     {
       "type": 3,
-      "title": "Proxy",
+      "title": "Nginx Proxy Manager",
       "description": "Container for a reverse proxy",
       "platform": "linux",
       "repository": {
         "url": "https://github.com/Lokowitz/portainer-templates",
-        "stackfile": "stacks/proxy/docker-compose.yml"
+        "stackfile": "stacks/nginx-proxy-manager/docker-compose.yml"
       },
       "env": [
         {
@@ -78,6 +78,27 @@
         "url": "https://github.com/Lokowitz/portainer-templates",
         "stackfile": "stacks/watchtower/docker-compose.yml"
       }
+    },
+    {
+      "type": 3,
+      "title": "Duplicati",
+      "description": "Container for backing up your docker volumes",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/duplicati/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Web port",
+          "description": "Port to access the web portal."
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone"
+        }
+      ]
     }
   ]
 }

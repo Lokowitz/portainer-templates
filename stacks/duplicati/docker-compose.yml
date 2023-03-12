@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  duplicati:
+    container_name: duplicati
+    image: lscr.io/linuxserver/duplicati:latest
+    restart: unless-stopped
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=${TZ}
+    ports:
+      - ${PORT}:8200
+    volumes:
+      - config:/config
+      - /backups:/backups
+      - /var/lib/docker/volumes:/source
+
+volumes:
+  config:
+    name: duplicati-config
