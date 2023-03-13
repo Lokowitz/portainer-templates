@@ -1,0 +1,28 @@
+version: '2'
+services:
+  linuxgsm:
+    image: "ghcr.io/gameservermanagers/linuxgsm-docker:latest"
+    container_name: csgoserver
+    environment:
+    - GAMESERVER=csgoserver
+    - LGSM_GITHUBUSER=GameServerManagers
+    - LGSM_GITHUBREPO=LinuxGSM
+    - LGSM_GITHUBBRANCH=master
+    volumes:
+    - /data/csgo/serverfiles:/home/linuxgsm/serverfiles
+    - /data/csgo/csgo-classic/log:/home/linuxgsm/log
+    - /data/csgo/csgo-classic/config:/home/linuxgsm/lgsm/config-lgsm
+    ports:
+    - "27015:27015/tcp"
+    - "27036:27036/tcp"
+    - "27005:27005/udp"
+    - "27015:27015/udp"
+    - "27020:27020/udp"
+    - "4380:4380/udp"
+    - "27031:27031/udp"
+    - "27032:27032/udp"
+    - "27033:27033/udp"
+    - "27034:27034/udp"
+    - "27035:27035/udp"
+    - "27036:27036/udp"
+    restart: unless-stopped

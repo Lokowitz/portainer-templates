@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+  linuxgsm:
+    image: "ghcr.io/gameservermanagers/linuxgsm-docker:latest"
+    container_name: cssserver-gg
+    environment:
+    - GAMESERVER=cssserver
+    - LGSM_GITHUBUSER=GameServerManagers
+    - LGSM_GITHUBREPO=LinuxGSM
+    - LGSM_GITHUBBRANCH=master
+    volumes:
+    - /data/css/serverfiles:/home/linuxgsm/serverfiles
+    - /data/css/css-gungame/log:/home/linuxgsm/log
+    - /data/css/css-gungame/config:/home/linuxgsm/lgsm/config-lgsm
+    - /data/css/css-gungame/addons:/home/linuxgsm/serverfiles/cstrike/addons
+    - /data/css/css-gungame/cfg/sourcemod:/home/linuxgsm/serverfiles/cstrike/cfg/sourcemod
+    - /data/css/css-gungame/cssserver.cfg:/home/linuxgsm/serverfiles/cstrike/cfg/cssserver.cfg
+    ports:
+    - "27115:27015/tcp"
+    - "27115:27015/udp"
+    - "27120:27020/udp"
+    - "27105:27005/udp"
+    restart: unless-stopped
