@@ -133,7 +133,7 @@
       ]
     },
     {
-      "type": 1,
+      "type": 3,
       "title": "Uptime Kuma",
       "description": "Container for an easy-to-use self-hosted monitoring tool.",
       "platform": "linux",
