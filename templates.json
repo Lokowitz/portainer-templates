@@ -2,7 +2,7 @@
   "version": "2",
   "templates": [
     {
-      "type": 3,
+      "type": 1,
       "title": "Filebrowser",
       "description": "Container for web based filebrowsing",
       "platform": "linux",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "type": 3,
+      "type": 1,
       "title": "AdGuard",
       "description": "Container for AD-blocking",
       "platform": "linux",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "type": 3,
+      "type": 1,
       "title": "Nginx Proxy Manager",
       "description": "Container for a reverse proxy",
       "platform": "linux",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "type": 3,
+      "type": 1,
       "title": "Vaultwarden",
       "description": "Container for a selfhosted bitwarden server",
       "platform": "linux",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "type": 3,
+      "type": 1,
       "title": "Watchtower",
       "description": "Container to keep your container up to date.",
       "platform": "linux",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "type": 3,
+      "type": 1,
       "title": "Duplicati",
       "description": "Container for backing up your docker volumes",
       "platform": "linux",
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "type": 3,
+      "type": 1,
       "title": "Wireguard Easy",
       "description": "Container for an easy Wireguad setup",
       "platform": "linux",
@@ -131,6 +131,23 @@
           "description": "Your DYNDNS Domain."
         }
       ]
-    }
+    },
+    {
+      "type": 1,
+      "title": "Uptime Kuma",
+      "description": "Container for an easy-to-use self-hosted monitoring tool.",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/uptime-kuma/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PORT",
+          "label": "Web port",
+          "description": "Port to access the web portal."
+        }
+      ]
+    },
   ]
 }

@@ -2,14 +2,14 @@ version: '2'
 
 services:
   uptime-kuma:
-    image: louislam/uptime-kuma:latest
     container_name: uptime-kuma
-    volumes:
-      - uptime-kuma-data:/app/data
+    image: louislam/uptime-kuma:latest
+    restart: unless-stopped
     ports:
-      - 3001:3001
-    restart: always
+      - ${PORT}:3001
+    volumes:
+      - data:/app/data
 
 volumes:
-  uptime-kuma-data:
-    name: uk-data
+  data:
+    name: uptime-kuma-data
