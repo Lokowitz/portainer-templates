@@ -1,0 +1,54 @@
+version: '2'
+
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    restart: unless-stopped
+    ports:
+      - 1883:1883
+    volumes:
+      - mosquitto-config:/mosquitto/config
+      - mosquitto-log:/mosquitto/log
+      - mosquitto-data:/mosquitto/data
+
+  node-red:
+    container_name: node-red
+    image: nodered/node-red:latest
+    restart: unless-stopped
+    ports:
+      - 1880:1880
+    volumes:
+      - nodered-data:/data
+
+  influxdb:
+    container_name: influxdb
+    image: influxdb:latest
+    restart: unless-stopped
+    ports:
+      - 8086:8086
+    volumes:
+      - influx-data:/var/lib/influxdb2
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+volumes:
+  mosquitto-config:
+    name: mosquitto-config
+  mosquitto-data:
+    name: mosquitto-data
+  mosquitto-log:
+    name: mosquitto-log
+  nodered-data:
+    name: nodered-data
+  influx-data:
+    name: influx-data
+  grafana-data:
+    name: grafana-data
