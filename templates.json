@@ -133,7 +133,7 @@
       ]
     },
     {
-      "type": 1,
+      "type": 3,
       "title": "Uptime Kuma",
       "description": "Container for an easy-to-use self-hosted monitoring tool.",
       "platform": "linux",
@@ -142,6 +142,28 @@
         "stackfile": "stacks/uptime-kuma/docker-compose.yml"
       },
       "env": [
+        {
+          "name": "PORT",
+          "label": "Web port",
+          "description": "Port to access the web portal."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Wiki.js",
+      "description": "Container for a self-hosted wiki.",
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Lokowitz/portainer-templates",
+        "stackfile": "stacks/wikijs/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DB-PWD",
+          "label": "Database Password",
+          "description": "Password for database."
+        },
         {
           "name": "PORT",
           "label": "Web port",
